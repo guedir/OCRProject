@@ -1,0 +1,141 @@
+/*generale*/
+body{
+background: #efefef;
+}
+
+a, a:hover, a:focus{
+    text-decoration: none;
+    color: #fff;
+}
+
+img{
+    width: 100%;
+}
+
+/*header*/
+
+@-webkit-keyframes clignote{
+    form{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes clignote{
+    form{opacity: 1;}
+    to{opacity: 0;}
+}
+div header{
+    line-height: 30px;
+    background: #5fcf80;
+    text-align: center;
+}
+header h1 a{
+    font-size: 1.5em;
+}
+header h1 a span{
+    -webkit-animation: clignote .5s ease alternate infinite;
+    animation: clignote .5s ease alternate infinite;
+}
+header nav{
+    font-size: 0.9em;
+}
+
+
+/*presentation*/
+div section {
+    padding : 30px 0px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+section h1{
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px ;
+}
+section p{
+font-size: 1em;
+color: #777;
+line-height: 1.4em;
+font-style: italic;
+}
+
+
+/*Articles*/
+.articles{
+   margin-bottom: 30px;
+}
+
+div article{
+    margin-top: 30px;
+    border-radius: 7px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+article img{
+    border-radius: 7px 7px 0 0;
+}
+article h1, article a, article p{
+    margin: 20px;
+}
+article h1{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3em;
+
+}
+article p{
+    color: #555;
+    line-height: 1.3em;
+}
+article a {
+    display: block;
+    background: #5fcf80;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 2px solid #4ca666;
+}
+
+/*affichage sur tablette*/
+@media (min-width : 768px){
+      header h1{
+        text-align: left
+    }
+      header ul{
+        float: right;
+    }
+      header li{
+        float: left;
+      }
+      header li+li { 
+        margin-left: 15px;
+      }
+     div section {
+        text-align: left;
+     }
+   /*  .articles div :nth-child(2n+1){
+        clear: left;
+     }*/
+}
+
+/*affichage sur écran de bureau*/
+@media(min-width : 992px){
+    .articles div :nth-child(2n+1){
+        clear: none;
+    }
+    .articles div :nth-child(3n+1){
+        clear: left;
+    }
+    article img{
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: filter .6s linear;
+        transition: filter .6s linear;
+    }
+
+    article:hover img {
+        -webkit-filter: none;
+        filter: none;
+    }
+}
